@@ -6,8 +6,11 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
@@ -31,15 +34,36 @@ public class MainActivity extends Activity {
     	
     	Log.d("Simon", "number of accounts = " + numberOfAccounts);
     	
-    	// Create new fragment and transaction
-    	Fragment newFragment = null;
-
     	if (numberOfAccounts > 0) {
-    		newFragment = new AccountListFragment();
+    		showFragment(new AccountListFragment());
     	} else {
-    		newFragment = new CreateAccountFragment();
+    		showFragment(new CreateAccountFragment());
     	}
-    	
+	}
+	
+	public void toggleShowPassword(View view) {
+        EditText password = (EditText) this.findViewById(R.id.password);
+		CheckBox showPassword = (CheckBox) this.findViewById(R.id.show_password);
+		
+		if(showPassword.isChecked()) {
+			if (password == null) {
+				Log.d("Simon", "password is null");
+			}
+			password.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        } else {
+        	password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+	}
+	
+	public void createAccount(View view) {
+		// TODO: something
+	}
+	
+	public void showCreateAccountFragment() {
+		showFragment(new CreateAccountFragment());
+	}
+	
+	private void showFragment(Fragment newFragment) {    	
     	FragmentManager fragmentManager = getFragmentManager();
     	FragmentTransaction transaction = fragmentManager.beginTransaction();
 
@@ -49,6 +73,6 @@ public class MainActivity extends Activity {
     	transaction.addToBackStack(null);
 
     	// Commit the transaction
-    	transaction.commit();
+    	transaction.commit();	
 	}
 }

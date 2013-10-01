@@ -5,7 +5,13 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 	<string name="domain_add_register_domain_question">Do you want to register with SecureSpaces.com?</string>
-	
+	<string name="username">Username</string>	
+	<string name="password">Password</string>	
+	<string name="confirm_password">Confirm Password</string>	
+	<string name="show_password">Show password</string>	
+	<string name="other_email">Other email</string>	
+	<string name="choose_account">Choose an account to login to SecureSpaces.com</string>
+		
 	<!-- Common strings -->
 	<string name="yes">Yes</string>
 	<string name="no">No</string>

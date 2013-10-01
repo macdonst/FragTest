@@ -7,10 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class RegisterFragment extends Fragment {
-    /**
-     * Create a new instance of DetailsFragment, initialized to
-     * show the text at 'index'.
-     */
     public static RegisterFragment newInstance(int index) {
     	RegisterFragment f = new RegisterFragment();
 
