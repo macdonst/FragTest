@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:id="@+id/ask"
+android:background="?android:attr/colorBackground">
+
+<TextView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="@android:style/TextAppearance.Large"
+    android:text="@string/domain_add_register_domain_question"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:padding="5dp"
+    style="?android:attr/buttonBarStyle">
+
+    <Button
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="@string/no"
+        android:onClick="closeFragment"
+        style="?android:attr/buttonBarStyle"/>
+
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="@string/yes" 
+        android:onClick="registerAccount"
+        style="?android:attr/buttonBarStyle"/>
+</LinearLayout>
+</RelativeLayout>
